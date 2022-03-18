@@ -31,16 +31,16 @@
                 <div class="col-12">
                     <div class="wrapper-input input-group mb-3">
                         <!-- qui inserisco l'input -->
-                        <input type="text" class="form-control" placeholder="Aggiungi nella lista di cose da fare">
+                        <input type="text" class="form-control" placeholder="Aggiungi nella lista di cose da fare" v-model="newToDoComponent" @keydown.enter="addContent(newToDoComponent)">
                         <!-- invio col bottone o con enter -->
-                        <button class="btn btn-outline-" type="button">Aggiungi</button>
+                        <button class="btn btn-outline-" type="button" @click="addContent(newToDoComponent)">Aggiungi</button>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="list-wrapper">
                         <!-- qui stampo  -->
                         <ul>
-                            <li>Ciao sono una lista</li>
+                            <li v-for="(element, index) in toDoList">{{element.text}}<span><i class="fas fa-x"></i></span></li>
                         </ul>
                         <h3>La lista ToDo è vuota</h3>
                     </div>
@@ -49,5 +49,6 @@
             </div>
         </section>
     </main>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
