@@ -33,16 +33,21 @@
                         <!-- qui inserisco l'input -->
                         <input type="text" class="form-control" placeholder="Aggiungi nella lista di cose da fare" v-model="newToDoComponent" @keydown.enter="addContent(newToDoComponent)">
                         <!-- invio col bottone o con enter -->
-                        <button class="btn btn-outline-" type="button" @click="addContent(newToDoComponent)">Aggiungi</button>
+                        <button class="btn btn-outline-" type="button" @click="addContent(newToDoComponent)">New To Do</button>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="list-wrapper">
                         <!-- qui stampo  -->
-                        <ul>
-                            <li v-for="(element, index) in toDoList">{{element.text}}<span><i class="fas fa-x" @click="removeContent(index)"></i></span></li>
+                        <ul v-if="toDoList.length >= 1">
+                            <li v-for="(element, index) in toDoList" :class="(element.done == true) ? 'text-decoration-line-through' : '' " @click="itsDone(index)">
+                                {{element.text}}
+                                <span>
+                                    <i class="fas fa-x" @click="removeContent(index)"></i>
+                                </span>
+                            </li>
                         </ul>
-                        <h3>La lista ToDo è vuota</h3>
+                        <h3 v-else>La lista ToDo è vuota</h3>
                     </div>
 
                 </div>
