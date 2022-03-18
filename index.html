@@ -40,7 +40,7 @@
                     <div class="list-wrapper">
                         <!-- qui stampo  -->
                         <ul v-if="toDoList.length >= 1">
-                            <li v-for="(element, index) in toDoList" :class="(element.done == true) ? 'text-decoration-line-through' : '' " @click="itsDone(index)">
+                            <li v-for="(element, index) in toDoList" :class="(element.done != false) ? 'text-decoration-line-through' : '' " @click="itsDone(index)">
                                 {{element.text}}
                                 <span>
                                     <i class="fas fa-x" @click="removeContent(index)"></i>

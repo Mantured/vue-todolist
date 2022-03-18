@@ -1,9 +1,4 @@
 
-
-/* MILESTONE 1
-Stampare all'interno di una lista, un item per ogni todo. Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
-*/
-
 const app = new Vue(
 
     {
@@ -34,7 +29,7 @@ const app = new Vue(
                 {
                     text: 'Aggiungere Span',
                     done: false,
-                },
+                }
             ],
         },
         methods: {
@@ -54,14 +49,23 @@ const app = new Vue(
                     console.log('Nope');
                 }
             },
+            /**
+             *
+             * @param {*} toDoIndex indice che viene dato dal v-for preso dal toDoList
+             */
             removeContent(toDoIndex) {
                 (this.toDoList[toDoIndex] != undefined) ? this.toDoList.splice(toDoIndex, 1) : console.warn('Doble Nope');
             },
+            /**
+             *
+             * @param {*} index indice che viene dato dal v-for preso dal toDoList
+             */
             itsDone(index) {
                 if (this.toDoList[index].done == true) {
                     this.toDoList[index].done = false;
                 } else {
                     this.toDoList[index].done = true;
+                    console.log(index);
                 }
             }
         },
