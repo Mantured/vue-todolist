@@ -1,0 +1,12 @@
+body {
+	font-family: "Chelsea Market", cursive;
+}
+
+div.list-wrapper ul {
+	list-style-type: none;
+}
+
+div.list-wrapper ul li {
+	border-bottom: 1px solid greenyellow;
+	padding: 1rem;
+}
