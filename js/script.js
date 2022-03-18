@@ -5,7 +5,7 @@ Stampare all'interno di una lista, un item per ogni todo. Se la proprietà done 
 MILESTONE 2
 Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa, il todo viene rimosso dalla lista.
 MILESTONE 3
-Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti. */
+*/
 
 const app = new Vue(
 
@@ -23,10 +23,12 @@ const app = new Vue(
                     done: false,
                 },
             ],
-
-
         },
         methods: {
+            /**
+             *
+             * @param {*} toDoContent argomento che l'utente inserirà nell'input, verrà poi aggiunto all'array come oggetto.
+             */
             addContent(toDoContent) {
                 if (toDoContent.trim() != '') {
                     const newToDoComponent = {
@@ -38,8 +40,10 @@ const app = new Vue(
                 } else {
                     console.log('Nope');
                 }
+            },
+            removeContent(toDoIndex) {
+                (this.toDoList[toDoIndex] != undefined) ? this.toDoList.splice(toDoIndex, 1) : console.warn('Doble Nope');
             }
         },
     }
-
 )

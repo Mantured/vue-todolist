@@ -7,10 +7,16 @@ div.list-wrapper ul {
 }
 
 div.list-wrapper ul li {
+	border: 1px solid transparent;
 	border-bottom: 1px solid greenyellow;
 	padding: 1rem;
 	display: flex;
 	justify-content: space-between;
+	cursor: pointer;
+}
+
+div.list-wrapper ul li:hover {
+	background-color: gainsboro;
 }
 
 #app {

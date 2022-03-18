@@ -40,7 +40,7 @@
                     <div class="list-wrapper">
                         <!-- qui stampo  -->
                         <ul>
-                            <li v-for="(element, index) in toDoList">{{element.text}}<span><i class="fas fa-x"></i></span></li>
+                            <li v-for="(element, index) in toDoList">{{element.text}}<span><i class="fas fa-x" @click="removeContent(index)"></i></span></li>
                         </ul>
                         <h3>La lista ToDo è vuota</h3>
                     </div>
