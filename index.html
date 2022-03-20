@@ -27,27 +27,28 @@
 <body>
     <main>
         <section class="container-fluid" id="app">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-12">
-                    <div class="wrapper-input input-group mb-3">
+                    <h1 class="mb-5 p-3 text-center text-capitalize">welcome to the ugly VooDoo list by keith flint</h1>
+                    <div class="wrapper-input input-group mb-5">
                         <!-- qui inserisco l'input -->
-                        <input type="text" class="form-control" placeholder="Aggiungi nella lista di cose da fare" v-model="newToDoComponent" @keydown.enter="addContent(newToDoComponent)">
+                        <input type="text" class="form-control rounded me-2" placeholder="Aggiungi nella lista di cose da fare" v-model="newToDoComponent" @keydown.enter="addContent(newToDoComponent)">
                         <!-- invio col bottone o con enter -->
-                        <button class="btn btn-outline-" type="button" @click="addContent(newToDoComponent)">New To Do</button>
+                        <button class="btn btn-warning rounded" type="button" @click="addContent(newToDoComponent)">New To Do</button>
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="list-wrapper">
+                <div class="col">
+                    <div class="list-wrapper p-3 me-3">
                         <!-- qui stampo  -->
                         <ul v-if="toDoList.length >= 1">
-                            <li v-for="(element, index) in toDoList" :class="(element.done != false) ? 'text-decoration-line-through' : '' " @click="itsDone(index)">
+                            <li class=" rounded" v-for="(element, index) in toDoList" :class="(element.done != false) ? 'text-decoration-line-through' : '' " @click="doneAchievement(index)">
                                 {{element.text}}
                                 <span>
-                                    <i class="fas fa-x" @click="removeContent(index)"></i>
+                                    <i class="fas fa-radiation fs-3" @click="removeContent(index)"></i>
                                 </span>
                             </li>
                         </ul>
-                        <h3 v-else>La lista ToDo è vuota</h3>
+                        <h3 class="text-white text-center bg-primary rounded" v-else>La lista ToDo è vuota</h3>
                     </div>
 
                 </div>

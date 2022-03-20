@@ -1,12 +1,11 @@
 
 const app = new Vue(
-
     {
         el: '#app',
         data: {
             newToDoComponent: '',
             toDoList: [
-                {
+/*                 {
                     text: 'Fare to do list',
                     done: true,
                 },
@@ -29,7 +28,7 @@ const app = new Vue(
                 {
                     text: 'Aggiungere Span',
                     done: false,
-                }
+                } */
             ],
         },
         methods: {
@@ -60,13 +59,17 @@ const app = new Vue(
              *
              * @param {*} index indice che viene dato dal v-for preso dal toDoList
              */
-            itsDone(index) {
+            /*    itsDone(index) {
                 if (this.toDoList[index].done == true) {
                     this.toDoList[index].done = false;
                 } else {
                     this.toDoList[index].done = true;
                     console.log(index);
                 }
+            }, */
+            doneAchievement(indexDo) {
+                this.toDoList[indexDo].done = !this.toDoList[indexDo].done;
+                console.log(this.toDoList.done);
             }
         },
 

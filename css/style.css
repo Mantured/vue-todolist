@@ -16,7 +16,11 @@ div.list-wrapper ul li {
 }
 
 div.list-wrapper ul li:hover {
-	background-color: gainsboro;
+	background-color: rgb(246, 213, 63);
+}
+
+div.list-wrapper ul li span:hover {
+	color: red;
 }
 
 #app {
