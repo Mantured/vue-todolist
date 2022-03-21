@@ -40,8 +40,9 @@
                 <div class="col">
                     <div class="list-wrapper p-3 me-3">
                         <!-- qui stampo  -->
-                        <ul v-if="toDoList.length >= 1">
+                        <ul v-if="toDoList.length > 0">
                             <li class=" rounded" v-for="(element, index) in toDoList" :class="(element.done != false) ? 'text-decoration-line-through' : '' " @click="doneAchievement(index)">
+                                <input type="checkbox">
                                 {{element.text}}
                                 <span>
                                     <i class="fas fa-radiation fs-3" @click="removeContent(index)"></i>

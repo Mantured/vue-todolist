@@ -53,7 +53,7 @@ const app = new Vue(
              * @param {*} toDoIndex indice che viene dato dal v-for preso dal toDoList
              */
             removeContent(toDoIndex) {
-                (this.toDoList[toDoIndex] != undefined) ? this.toDoList.splice(toDoIndex, 1) : console.warn('Doble Nope');
+                (this.toDoList[toDoIndex] != undefined) ? this.toDoList.splice(toDoIndex, 1) : console.warn('Double Nope');
             },
             /**
              *
@@ -68,8 +68,7 @@ const app = new Vue(
                 }
             }, */
             doneAchievement(indexDo) {
-                this.toDoList[indexDo].done = !this.toDoList[indexDo].done;
-                console.log(this.toDoList.done);
+                    this.toDoList[indexDo].done = !this.toDoList[indexDo].done;
             }
         },
 
